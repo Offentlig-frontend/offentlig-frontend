@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <title>Offentlig frontend</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Oswald"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open Sans"
+    />
+    <style>
+      /*
+            https://www.joshwcomeau.com/css/custom-css-reset/
+        1. Use a more-intuitive box-sizing model.
+        */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      /*
+        2. Remove default margin
+        */
+      * {
+        margin: 0;
+      }
+      /*
+        Typographic tweaks!
+        3. Add accessible line-height
+        4. Improve text rendering
+        */
+      body {
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+      /*
+        5. Improve media defaults
+        */
+      img,
+      picture,
+      video,
+      canvas,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+      /*
+        6. Remove built-in form typography styles
+        */
+      input,
+      button,
+      textarea,
+      select {
+        font: inherit;
+      }
+      /*
+        7. Avoid text overflows
+        */
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        overflow-wrap: break-word;
+      }
+      /*
+        8. Create a root stacking context
+        */
+      #root,
+      #__next {
+        isolation: isolate;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Oswald";
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+      }
+
+      body {
+        font-family: "Open Sans";
+        padding: 2rem 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <section style="margin: 0 auto; display: grid; gap: 2rem">
+      <header>
+        <h1>Offentlig frontend</h1>
+        <p style="margin-bottom: 1rem">
+          Vi er ett initiativ for sterkere samarbeid og
+          erfarings-/kompetansedeling innen frontend i offentlig sektor. Mange
+          offentlige aktører deltar i initiativet inkludert NRK, NAV, Politiets
+          IT-enhet, Oslo Origo, Husbanken, Skatteetaten, Statens Pensjonskasse,
+          Statens Vegvesen, Norsk Helsenett, SSB, UiO og mange flere.
+        </p>
+        <p>
+          Du finner oss på
+          <a
+            href="https://join.slack.com/t/offentlig-frontend/shared_invite/zt-2dm99ml4i-rJdTFVfjgAmfAMU1ta52Ag"
+            target="_blank"
+            >Slack</a
+          >. Der poster vi også nyheter om kommende arrangementer og har
+          diskusjoner om alt frontend.
+        </p>
+      </header>
+      <section>
+        <h2>Arrangører</h2>
+        <section>
+          <ul>
+            <li>Andreas Nordahl (NAV)</li>
+            <li>Kjetil Hårtveit (Politiets IT-enhet)</li>
+            <li>Ingrid Grønlie Guren (NRK)</li>
+            <li>Ingrid Gormsdatter Draagen (NRK)</li>
+            <li>Jan Schjetne (Oslo Origo)</li>
+            <li>Sara Maldum (Husbanken)</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <h2>Arrangementer</h2>
+        <ul>
+          <li>
+            10. september 2024 kl 12:00-16:00 (<a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSceoSR-XAGIX-yDugX9XTI82AdDLGwFpZxjQ5ggSzUeaqdoQA/viewform"
+              target="_blank"
+              >påmelding</a
+            >)
+          </li>
+          <li>23 april 2024 kl 13:00-16:00 (<i>fullført</i>)</li>
+        </ul>
+      </section>
+    </section>
+  </body>
+</html>
