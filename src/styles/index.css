@@ -9,8 +9,8 @@
   --color-primary-400: hsla(204, 70%, 45%, 1);
   --color-primary-700: hsla(204, 89%, 26%, 1);
 
-  /* --color-accent-100: white;
-		--color-accent-400: white;
+  /* --color-accent-100: TBD;
+		--color-accent-400: TBD;
 		--color-accent-700: white; */
 
   --font-family: "Inter", sans-serif; /*'Inter var', sans-serif */
@@ -68,10 +68,22 @@ h2 {
   margin-bottom: var(--size-m);
 }
 
+a {
+  color: var(--color-primary-700);
+}
+
 section {
   background-color: var(--color-neutral-000);
   color: var(--color-neutral-900);
   border-radius: var(--border-radius-xl);
   padding: var(--size-m);
   margin-bottom: var(--size-m);
+}
+
+The second section:nth-child(2) {
+}
+ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
 }
