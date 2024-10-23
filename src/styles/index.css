@@ -160,3 +160,9 @@ section:nth-child(2) ul li:nth-child(2n + 1):not(:last-child) {
 section:nth-child(2) ul li:not(:last-child) {
   border-bottom: var(--border);
 }
+
+section:nth-child(2) a {
+  display: block;
+  margin-top: var(--size-m);
+  margin-bottom: var(--size-xs);
+}
