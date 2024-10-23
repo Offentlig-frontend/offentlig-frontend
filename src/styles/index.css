@@ -64,6 +64,8 @@ h1 {
 h2 {
   font-size: 2rem;
   text-align: center;
+  margin-top: var(--size-xs);
+  margin-bottom: var(--size-m);
 }
 
 section {
