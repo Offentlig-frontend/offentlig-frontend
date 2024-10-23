@@ -1,0 +1,46 @@
+:root {
+  --color-neutral-000: white;
+  --color-neutral-400: grey;
+  --color-neutral-900: black;
+
+  --color-primary-100: hsla(213, 93%, 89%, 1);
+  --color-primary-400: hsla(204, 70%, 45%, 1);
+  --color-primary-700: hsla(204, 89%, 26%, 1);
+
+  /* --color-accent-100: white;
+		--color-accent-400: white;
+		--color-accent-700: white; */
+
+  --font-family: "Inter", sans-serif; /*'Inter var', sans-serif */
+}
+
+/* CSS resets */
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--color-primary-700);
+  color: var(--color-neutral-000);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+a {
+  color: white;
+}
+
+section {
+  background-color: var(--color-primary-000);
+}
