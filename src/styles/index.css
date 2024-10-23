@@ -1,4 +1,6 @@
 :root {
+  font-size: 16px;
+
   --color-neutral-000: white;
   --color-neutral-400: grey;
   --color-neutral-900: black;
@@ -17,7 +19,6 @@
   --size-xxs: 4px;
   --size-xs: 8px;
   --size-s: 16px;
-  --size-sm: 18px;
   --size-m: 24px;
   --size-ml: 36px;
   --size-l: 48px;
@@ -60,13 +61,15 @@ h1 {
   font-size: 2rem;
 }
 
-a {
-  color: white;
+h2 {
+  font-size: 2rem;
+  text-align: center;
 }
 
 section {
   background-color: var(--color-neutral-000);
   color: var(--color-neutral-900);
   border-radius: var(--border-radius-xl);
-  padding: var(--size-sm) var(--size-m) var(--size-m) var(--size-m);
+  padding: var(--size-m);
+  margin-bottom: var(--size-m);
 }
