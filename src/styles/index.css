@@ -166,3 +166,11 @@ section:nth-child(2) a {
   margin-top: var(--size-m);
   margin-bottom: var(--size-xs);
 }
+
+h3 {
+  text-align: center;
+}
+
+section:nth-child(3) > p {
+  text-align: center;
+}
