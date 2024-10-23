@@ -12,6 +12,25 @@
 		--color-accent-700: white; */
 
   --font-family: "Inter", sans-serif; /*'Inter var', sans-serif */
+
+  /* Sizes */
+  --size-xxs: 4px;
+  --size-xs: 8px;
+  --size-s: 16px;
+  --size-sm: 18px;
+  --size-m: 24px;
+  --size-ml: 36px;
+  --size-l: 48px;
+  --size-xl: 96px;
+  --size-page-s: 5%;
+  --size-page-l: 9%;
+
+  /* Borders */
+  --border-radius-s: 1px;
+  --border-radius-m: 3px;
+  --border-radius-l: 6px;
+  --border-radius-xl: 8px;
+  --border-radius-xxl: 999px;
 }
 
 /* CSS resets */
@@ -19,6 +38,10 @@
 :before,
 :after {
   box-sizing: border-box;
+}
+
+* {
+  margin: 0;
 }
 
 body {
@@ -42,5 +65,8 @@ a {
 }
 
 section {
-  background-color: var(--color-primary-000);
+  background-color: var(--color-neutral-000);
+  color: var(--color-neutral-900);
+  border-radius: var(--border-radius-xl);
+  padding: var(--size-sm) var(--size-m) var(--size-m) var(--size-m);
 }
