@@ -23,8 +23,6 @@
   --size-ml: 36px;
   --size-l: 48px;
   --size-xl: 96px;
-  --size-page-s: 5%;
-  --size-page-l: 9%;
 
   /* Borders */
   --border-radius-s: 1px;
@@ -59,6 +57,11 @@ header {
 
 h1 {
   font-size: 2rem;
+}
+
+main {
+  margin-right: var(--size-m);
+  margin-left: var(--size-m);
 }
 
 h2 {
