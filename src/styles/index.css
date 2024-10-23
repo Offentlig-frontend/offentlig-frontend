@@ -32,16 +32,44 @@
   --border-radius-xxl: 999px;
 }
 
-/* CSS resets */
+/* CSS reset */
 *,
-:before,
-:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 * {
   margin: 0;
 }
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/* CSS reset ends*/
 
 body {
   font-family: var(--font-family);
@@ -92,6 +120,8 @@ section:nth-child(2):not(h2) {
 }
 
 section:nth-child(2) ul {
+  margin-right: auto;
+  margin-left: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: auto;
