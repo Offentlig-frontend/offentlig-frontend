@@ -59,6 +59,7 @@ html {
 }
 
 header {
+  pointer-events: none;
   display: flex;
   margin: var(--tv-margin-y) var(--tv-margin-x);
   width: var(--tv-width);
@@ -113,6 +114,7 @@ main::before {
 }
 
 main::after {
+  pointer-events: none;
   content: "";
   display: block;
   width: var(--tv-screen-width);
@@ -145,6 +147,7 @@ section {
     padding-left: var(--size-ml);
     line-height: 1.3;
     text-transform: uppercase;
+    margin-bottom: var(--size-s);
   }
 
   ul {
@@ -153,19 +156,22 @@ section {
     color: #75eaf0;
     line-height: 1.3;
     counter-reset: member;
+    margin-bottom: var(--size-m);
 
     li {
       display: flex;
       justify-content: space-between;
 
+      &::before {
+        content: "................................................................................................";
+        overflow: hidden;
+        order: 1;
+      }
+
       &::after {
         counter-increment: member;
         content: "00" counter(member);
-        /*       
-        counter-increment: member;
-        color: hsl(240, 100%, 50%);
-        font-weight: 600;
-        margin-right: var(--size-s); */
+        order: 2;
       }
     }
   }
