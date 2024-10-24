@@ -162,17 +162,22 @@ section {
       display: flex;
       justify-content: space-between;
       white-space: nowrap;
+      flex-shrink: 0;
 
       &::before {
         content: "................................................................................................";
         overflow: hidden;
         order: 1;
+        letter-spacing: 5px;
+        margin-left: var(--size-xs);
       }
 
       &::after {
+        padding-left: 5px;
         counter-increment: member;
         content: "00" counter(member);
         order: 2;
+        background-color: inherit;
       }
     }
   }
