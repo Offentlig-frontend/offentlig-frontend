@@ -152,6 +152,28 @@ section:nth-child(3) {
   & > p {
     text-align: center;
   }
+
+  details {
+    margin-top: var(--size-s);
+    margin-bottom: var(--size-s);
+    padding: var(--size-s);
+    border-radius: var(--border-radius-m);
+    background: hsl(var(--color-primary-100));
+    color: hsl(var(--color-primary-900));
+
+    summary {
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    summary > p, article {
+      margin-left: var(--size-s);
+    }
+
+    article {
+      margin-top: var(--size-s);
+    }
+  }
 }
 
 footer {
