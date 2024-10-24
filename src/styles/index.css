@@ -30,14 +30,15 @@
   --border-radius-xl: 8px;
   --border-radius-xxl: 999px;
 
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  color: hsl(var(--color-neutral-900));
-  line-height: 1.5;
-}
+  /* Logo CSS Custom Variables */
+  --logo-margin-top: var(--size-l);
+  --logo-max-height: 250px;
+  --logo-height: min(30vh, var(--logo-max-height));
+  --logo-aspect-ratio: calc(280 / 372);
+  --logo-width: calc(var(--logo-aspect-ratio) * var(--logo-height));
 
-body {
   --bg-divider: 40vw;
+
   background: linear-gradient(
     90deg,
     hsl(var(--color-primary-600)) var(--bg-divider),
@@ -45,17 +46,48 @@ body {
   );
 
   background-color: hsl(var(--color-primary-100));
+
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: hsl(var(--color-neutral-900));
+  line-height: 1.5;
+}
+
+html::after {
+  --triangle-bg-color: var(--color-primary-100);
+  --triangle-height: calc(var(--logo-margin-top) + var(--logo-height) * 0.3);
+  --triangle-angle: 39deg;
+  --triangle-hypothenuse: calc(
+    var(--triangle-height) / sin(var(--triangle-angle))
+  );
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--bg-divider);
+  transform: translateX(-50%);
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: var(--triangle-hypothenuse) solid transparent;
+  border-right: var(--triangle-hypothenuse) solid transparent;
+  border-top: var(--triangle-height) solid hsl(var(--triangle-bg-color));
+  z-index: -1;
 }
 
 header {
-  margin: var(--size-l);
+  margin-top: var(--logo-margin-top);
+  margin-bottom: var(--size-l);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
   gap: var(--size-s);
 
   svg {
-    width: 72px;
+    margin-left: var(--bg-divider);
+    transform: translateX(-50%);
+    height: var(--logo-height);
+    width: var(--logo-width);
+    max-height: var(--logo-max-height);
 
     .logo__letter-f,
     .logo__left {
