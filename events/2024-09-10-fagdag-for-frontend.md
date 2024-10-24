@@ -3,7 +3,7 @@ title: "Fagdag for frontend i det offentlige"
 date: "2024-09-10"
 ---
 
-#### **Program**
+**Program**
 
 - Christian Johansen: Datadrevet frontendutvikling
 - Eivind Riise: Utilgjengelige opplevelser
