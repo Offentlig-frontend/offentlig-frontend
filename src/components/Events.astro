@@ -13,15 +13,14 @@ const events: Event[] = Object.values(
 
 const now = new Date();
 const futureEvents = events.filter(
-  (event: Event) => new Date(event.frontmatter.date) > now
+  (event: Event) => new Date(event.frontmatter.date) >= now
 );
 const pastEvents = events.filter(
-  (event: Event) => new Date(event.frontmatter.date) <= now
+  (event: Event) => new Date(event.frontmatter.date) < now
 );
 
 const formatDate = (date) =>
   new Date(date).toLocaleDateString("no-NO", {
-    weekday: "short",
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -34,7 +33,7 @@ const formatDate = (date) =>
     futureEvents.length === 0 ? (
       <p>Ingen arrangementer planlagt for øyeblikket</p>
     ) : (
-      events.map((event) => (
+      futureEvents.map((event) => (
         <details>
           <summary>
             <span>{event.frontmatter.title}</span>
@@ -51,7 +50,7 @@ const formatDate = (date) =>
     pastEvents.length === 0 ? (
       <p>Ingen tidligere arrangementer</p>
     ) : (
-      events.map((event) => (
+      pastEvents.map((event) => (
         <details>
           <summary>
             <span>{event.frontmatter.title}</span>
