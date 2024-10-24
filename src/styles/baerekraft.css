@@ -1,6 +1,4 @@
 img {
-  // Turns out images are downloaded
-  // regardless if they are showed or not :(
   display: none;
 }
 
