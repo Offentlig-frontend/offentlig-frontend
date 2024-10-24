@@ -1,10 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Content from '../components/Content.astro';
+import Layout from "../layouts/Layout.astro";
+import Content from "../components/Content.astro";
 
-import "../styles/index.css";
+// import your own stylesheet here
+// import "../styles/index-flex.css";
+import "../styles/index-grid.css";
+
+// Optional CSS reset
+import "../styles/reset.css";
 ---
 
-<Layout>
-	<Content />
+<Layout title="Offentlig frontend">
+  <Content />
 </Layout>
