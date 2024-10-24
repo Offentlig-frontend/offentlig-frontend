@@ -77,12 +77,34 @@ header {
   img {
     position: absolute;
     right: calc(
-      -1 * (var(--tv-frame-border-right) + var(--tv-screen-outline)) / 2
+            -1 * ((var(--tv-frame-border-right) + var(--tv-screen-outline)) / 2 + 50px)
     );
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    height: 90px;
+    background: var(--color-primary-800);
+    padding: var(--size-xs);
+
+  }
+
+    h1::before {
+      --tv-buttons-frame: calc(var(--tv-frame-border-right) / 2);
+      content: "";
+      display: block;
+      border: 2px solid yellow;
+      height: calc(var(--tv-height) / 2);
+      width: var(--tv-buttons-frame);
+      right: calc(
+              -1 * ((var(--tv-frame-border-right) + var(--tv-screen-outline)) / 2 + (var(--tv-buttons-frame) - 90px) * 2)
+              /* -1 * ((var(--tv-frame-border-right) + var(--tv-screen-outline)) / 2 - (var(--tv-buttons-frame) - 90px) / 2) */
+      );
+      top: -50px;
+      position: absolute;
+      opacity: 1;
   }
 
   h1 {
-    display: none;
+    color: rgba(0, 0, 0, 0);
   }
 }
 
