@@ -3,6 +3,12 @@ img {
 }
 
 footer {
+  p::after {
+    margin-top: 16px;
+    display: block;
+    content: 'Nåværende stil er den vi har kalt "bærekraftig". Den er forsøkt levert med så lite CSS som mulig. Riktignok, den mest bærekraftige nettsiden er den som aldri blir laget ;)';
+  }
+
   a[href="/"]::before {
     content: "Offentlig frontend";
     display: block;
