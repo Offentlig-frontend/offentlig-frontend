@@ -1,0 +1,15 @@
+img {
+  display: none;
+}
+
+footer {
+  a[href="/"]::before {
+    content: "Offentlig frontend";
+    display: block;
+  }
+
+  a[href="/nrk"]::before {
+    content: "NRK";
+    display: block;
+  }
+}
