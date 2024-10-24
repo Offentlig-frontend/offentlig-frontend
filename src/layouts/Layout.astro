@@ -18,24 +18,3 @@ const { title } = Astro.props;
 		<slot />
 	</body>
 </html>
-<style is:global>
-	
-	:root { 
-		font-family: 'Inter', sans-serif;
-		font-size: 16px;
-		background: #074E7E;
-		color: white;
-	}
-
-	@supports (font-variation-settings: normal) {
-  	:root { 
-			font-family: 'Inter var', sans-serif; 
-		}
-	}
-
-	*, :before, :after {
-		box-sizing: border-box;
-	}
-
-	
-</style>
