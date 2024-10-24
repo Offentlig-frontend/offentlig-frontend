@@ -1,13 +1,15 @@
 :root {
-  /* Martins */
   --color-primary-100: 213, 93%, 89%;
   --color-primary-400: 204, 70%, 45%;
-  --color-primary-600: 204, 89%, 26%;
+
+  --color-primary-600: var(--nrk-color-gray-400);
   --color-primary-800: var(--nrk-color-core-blue-800);
-  --color-primary-900: 210, 100%, 7%;
+  --color-primary-900: var(--nrk-color-core-blue-900);
 
   --color-neutral-100: 0, 0%, 100%;
   --color-neutral-900: 210, 100%, 1%;
+
+  --color-accent-400--hsl: 58, 73%, 44%;
 
   /* Sizes */
   --size-xxs: 4px;
@@ -19,14 +21,24 @@
   --size-xl: 96px;
 
   --tv-margin-y: calc((100vh - var(--tv-height)) / 2);
-  --tv-frame-border-top: 50px;
-  --tv-frame-border-right: 200px;
-  --tv-frame-border-bottom: 100px;
-  --tv-frame-border-left: 50px;
-  --tv-frame-outline: 30px;
-  --tv-width: 90vw;
+  --tv-margin-x: calc((100vw - var(--tv-width)) / 2);
+  --tv-frame-border-top: 8.5vw;
+  --tv-frame-border-right: 21vw;
+  --tv-frame-border-bottom: 9vw;
+  --tv-frame-border-left: 6vw;
+  --tv-frame-outline: 1.7vw;
+  --tv-screen-outline: 4.4vw;
+  --tv-width: 85vw;
   --tv-aspect-ratio: 1.68;
-  --tv-height: calc( var(--tv-width) / var(--tv-aspect-ratio) );
+  --tv-height: calc(var(--tv-width) / var(--tv-aspect-ratio));
+  --tv-screen-height: calc(
+    100vh - (var(--tv-margin-y) * 2) - var(--tv-frame-border-top) -
+      var(--tv-frame-border-bottom)
+  );
+  --tv-screen-width: calc(
+    100vw - (var(--tv-margin-x) * 2) - var(--tv-frame-border-right) -
+      var(--tv-frame-border-left)
+  );
 
   /* Borders */
   --border-radius-s: 1px;
@@ -48,14 +60,14 @@ html {
 
 header {
   display: flex;
-  margin: var(--tv-margin-y) auto;
+  margin: var(--tv-margin-y) var(--tv-margin-x);
   width: var(--tv-width);
   align-content: center;
   justify-items: center;
-  border-top: var(--tv-frame-border-top) solid #6f828b;
-  border-right: var(--tv-frame-border-right) solid #6f828b;
-  border-bottom: var(--tv-frame-border-bottom) solid #6f828b;
-  border-left: var(--tv-frame-border-left) solid #6f828b;
+  border-top: var(--tv-frame-border-top) solid var(--color-primary-600);
+  border-right: var(--tv-frame-border-right) solid var(--color-primary-600);
+  border-bottom: var(--tv-frame-border-bottom) solid var(--color-primary-600);
+  border-left: var(--tv-frame-border-left) solid var(--color-primary-600);
   outline: var(--tv-frame-outline) solid #061c45;
   position: fixed;
   inset: 0;
@@ -69,18 +81,14 @@ header {
 
 main {
   margin-left: calc(
-    var(--tv-frame-border-left) +
-      calc((100vw - var(--tv-width)) / 2)
+    var(--tv-frame-border-left) + calc((100vw - var(--tv-width)) / 2)
   );
-  margin-top: calc(
-    var(--tv-frame-border-top) +
-    var(--tv-margin-y)
-  );
+  margin-top: calc(var(--tv-frame-border-top) + var(--tv-margin-y));
   margin-right: calc(
-    var(--tv-frame-border-right) +
-      calc((100vw - var(--tv-width)) / 2)
+    var(--tv-frame-border-right) + calc((100vw - var(--tv-width)) / 2)
   );
-  padding: var(--size-m);
+  padding: var(--size-l);
+  padding-top: 0;
   padding-bottom: calc(
     100vh - var(--tv-height) + var(--tv-frame-border-bottom) +
       var(--tv-frame-outline)
@@ -88,17 +96,96 @@ main {
   font-family: "Alumni Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  line-height: 130%;
+  letter-spacing: 2.4px;
+  font-size: var(--size-m);
+  font-weight: 500;
 }
 
 main::before {
   content: "";
   display: block;
   width: 100%;
-  height: 200px;
+  height: var(--tv-screen-height);
   background-image: url("data:image/svg+xml,%3Csvg width='187' height='170' viewBox='0 0 187 170' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.847656' y='30.5383' width='52.8951' height='109.692' fill='%23B19182'/%3E%3Crect x='133.953' y='30.5383' width='52.8951' height='109.692' fill='%23B19182'/%3E%3Cpath d='M55.9106 30.5383H108.806L132.435 140.231H80.1903L55.9106 30.5383Z' fill='%23B19182'/%3E%3Cpath d='M94.498 4.30756V166.245C22.526 144.566 -4.13837 45.7132 94.498 4.30756Z' stroke='%238BB5EB' stroke-width='4'/%3E%3Cpath d='M166.47 133.294C117.172 106.639 72.6421 105.551 23.1763 132.643M167.337 37.0418C113.358 67.6083 66.3162 63.4894 21.4421 37.0418M94.498 4.30756C135.113 67.067 135.727 102.517 94.498 166.245C52.5315 103.491 52.7521 68.0276 94.498 4.30756Z' stroke='%238BB5EB' stroke-width='4'/%3E%3Cpath d='M181.162 87.0683C179.879 112.173 169.577 130.369 153.898 142.838C138.18 155.34 116.917 162.188 93.5937 164.24C70.0056 163.044 49.1545 156.153 33.8011 143.433C18.4717 130.733 8.46333 112.094 6.74978 87.0511C6.76714 62.1912 16.3475 41.9576 32.0488 27.8602C47.7867 13.7299 69.787 5.6686 94.7327 5.4452C95.0696 5.44218 95.407 5.44059 95.7449 5.44044C119.529 6.73055 140.887 14.7084 156.273 28.527C171.626 42.3169 181.15 62.0226 181.162 87.0683Z' stroke='%238BB5EB' stroke-width='4'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
+  background-position: center;
+}
+
+main::after {
+  content: "";
+  display: block;
+  width: var(--tv-screen-width);
+  height: var(--tv-screen-height);
+  outline: var(--tv-screen-outline) solid var(--color-primary-900);
+  position: fixed;
+  top: calc(var(--tv-margin-y) + var(--tv-frame-border-top));
+  left: calc(var(--tv-margin-x) + var(--tv-frame-border-left));
+  border-top-left-radius: 10vw 5vw;
+  border-top-right-radius: 10vw 5vw;
+  border-bottom-right-radius: 10vw 5vw;
+  border-bottom-left-radius: 10vw 5vw;
+  /* border-top-left-radius: 20% 10%;
+  border-top-right-radius: 20% 10%;
+  border-bottom-right-radius: 20% 10%;
+  border-bottom-left-radius: 20% 10%; */
+}
+
+section {
+  margin-bottom: var(--size-m);
+
+  a {
+    display: flex;
+    gap: var(--size-s);
+    align-items: center;
+    color: hsl(var(--color-accent-400--hsl));
+    margin-bottom: var(--size-s);
+    font-weight: 600;
+    line-height: 155%;
+  }
+
+  h2 {
+    background-color: hsl(240, 100%, 50%);
+    padding-left: var(--size-ml);
+    line-height: 1.3;
+    text-transform: uppercase; 
+    
+  }
+  
+  ul {
+    text-transform: uppercase; 
+    list-style: none;
+    color: #75eaf0;
+    line-height: 1.3;
+    counter-reset: member;
+
+    li{
+      display: flex;
+      justify-content: space-between;
+    
+
+      &::after {
+        counter-increment: member;
+        content: "00" counter(member);
+        /*       
+        counter-increment: member;
+        color: hsl(240, 100%, 50%);
+        font-weight: 600;
+        margin-right: var(--size-s); */
+        
+      }
+    }
+  }
+
+}
+
+p {
+  margin-bottom: var(--size-s);
+
 }
 
 footer {
   display: none;
 }
+
+
