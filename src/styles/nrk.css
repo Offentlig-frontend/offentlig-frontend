@@ -28,7 +28,7 @@
   --tv-frame-border-left: calc(0.071 * var(--tv-width));
   --tv-frame-outline: calc(0.02 * var(--tv-width));
   --tv-screen-outline: calc(0.052 * var(--tv-width));
-  --tv-width: min(85vw, 1000px);
+  --tv-width: min(max(85vw, 90vh), 1000px);
   --tv-aspect-ratio: 1.68;
   --tv-height: calc(var(--tv-width) / var(--tv-aspect-ratio));
   --tv-screen-height: calc(
@@ -74,7 +74,13 @@ header {
   inset: 0;
   box-shadow: 0 0 0 max(100vh, 100vw) var(--color-primary-800);
 
-  img,
+  img {
+    position: absolute;
+    right: calc(
+      -1 * (var(--tv-frame-border-right) + var(--tv-screen-outline)) / 2
+    );
+  }
+
   h1 {
     display: none;
   }
