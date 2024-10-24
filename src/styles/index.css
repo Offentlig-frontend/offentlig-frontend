@@ -32,15 +32,19 @@
 
   font-family: "Inter", sans-serif;
   font-size: 16px;
-  background: hsl(var(--color-primary-600));
   color: hsl(var(--color-neutral-900));
   line-height: 1.5;
 }
 
-@supports (font-variation-settings: normal) {
-  :root {
-    font-family: "Inter var", sans-serif;
-  }
+body {
+  --bg-divider: 40vw;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--color-primary-600)) var(--bg-divider),
+    hsl(var(--color-primary-400)) var(--bg-divider)
+  );
+
+  background-color: hsl(var(--color-primary-100));
 }
 
 header {
