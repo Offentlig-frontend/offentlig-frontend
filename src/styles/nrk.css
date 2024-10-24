@@ -20,6 +20,9 @@
   --size-l: 48px;
   --size-xl: 96px;
 
+
+  /* TV props */
+
   --tv-margin-y: calc((100vh - var(--tv-height)) / 2);
   --tv-margin-x: calc((100vw - var(--tv-width)) / 2);
   --tv-frame-border-top: calc(0.1 * var(--tv-width));
@@ -39,6 +42,8 @@
     100vw - (var(--tv-margin-x) * 2) - var(--tv-frame-border-right) -
       var(--tv-frame-border-left)
   );
+  --tv-buttons-frame-width: calc(var(--tv-frame-border-right) / 2);
+  --tv-buttons-img-size: calc(var(--tv-width) , 0.08);
 
   /* Borders */
   --border-radius-s: 1px;
@@ -81,22 +86,23 @@ header {
     );
     border-radius: 50%;
     aspect-ratio: 1 / 1;
-    height: 90px;
+    height: var(--tv-buttons-img-size);
     background: var(--color-primary-800);
     padding: var(--size-xs);
 
   }
 
     h1::before {
-      --tv-buttons-frame: calc(var(--tv-frame-border-right) / 2);
       content: "";
       display: block;
       border: 2px solid yellow;
       height: calc(var(--tv-height) / 2);
       width: var(--tv-buttons-frame);
       right: calc(
-              -1 * ((var(--tv-frame-border-right) + var(--tv-screen-outline)) / 2 + (var(--tv-buttons-frame) - 90px) * 2)
-              /* -1 * ((var(--tv-frame-border-right) + var(--tv-screen-outline)) / 2 - (var(--tv-buttons-frame) - 90px) / 2) */
+              -1 * ((var(--tv-frame-border-right) + var(--tv-screen-outline)) / 2 + (var(--tv-buttons-frame) - var(--tv-buttons-img-size)) * 2)
+      );
+      right: calc(
+              -1 * ((var(--tv-frame-border-right) + var(--tv-screen-outline)) / 2 + (var(--tv-buttons-frame) - var(--tv-buttons-img-size)) * 2)
       );
       top: -50px;
       position: absolute;
@@ -215,6 +221,8 @@ p {
   margin-bottom: var(--size-s);
 }
 
+
 footer {
-  display: none;
+  background: hotpink;
+  order: -1;
 }
