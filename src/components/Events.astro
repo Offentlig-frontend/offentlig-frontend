@@ -12,12 +12,20 @@ const events: Event[] = Object.values(
 );
 
 const now = new Date();
+
+const sortByLatest = (a: Event, b: Event) =>
+  new Date(b.frontmatter.date) > new Date(a.frontmatter.date) ? 1 : -1;
+
+const sortByUpcoming = (a: Event, b: Event) =>
+  new Date(a.frontmatter.date) > new Date(b.frontmatter.date) ? 1 : -1;
+
 const futureEvents = events.filter(
   (event: Event) => new Date(event.frontmatter.date) >= now
-);
+).sort(sortByUpcoming);
+
 const pastEvents = events.filter(
   (event: Event) => new Date(event.frontmatter.date) < now
-);
+).sort(sortByLatest);
 
 const formatDate = (date) =>
   new Date(date).toLocaleDateString("no-NO", {
@@ -33,15 +41,19 @@ const formatDate = (date) =>
     futureEvents.length === 0 ? (
       <p>Ingen arrangementer planlagt for øyeblikket</p>
     ) : (
-      futureEvents.map((event) => (
-        <details>
-          <summary>
-            <span>{event.frontmatter.title}</span>
-            <p>{formatDate(event.frontmatter.date)}</p>
-          </summary>
-          <article set:html={event.compiledContent()} />
-        </details>
-      ))
+      <ol>
+        {futureEvents.map((event) => (
+          <li>
+            <details>
+              <summary>
+                <span>{event.frontmatter.title}</span>
+                <p>{formatDate(event.frontmatter.date)}</p>
+              </summary>
+              <article set:html={event.compiledContent()} />
+            </details>
+          </li>
+        ))}{" "}
+      </ol>
     )
   }
 
@@ -50,16 +62,20 @@ const formatDate = (date) =>
     pastEvents.length === 0 ? (
       <p>Ingen tidligere arrangementer</p>
     ) : (
-      pastEvents.map((event) => (
-        <details>
-          <summary>
-            <span>{event.frontmatter.title}</span>
-            <p>{formatDate(event.frontmatter.date)}</p>
-          </summary>
+      <ol>
+        {pastEvents.map((event) => (
+          <li>
+            <details>
+              <summary>
+                <span>{event.frontmatter.title}</span>
+                <p>{formatDate(event.frontmatter.date)}</p>
+              </summary>
 
-          <article set:html={event.compiledContent()} />
-        </details>
-      ))
+              <article set:html={event.compiledContent()} />
+            </details>
+          </li>
+        ))}
+      </ol>
     )
   }
 </section>
