@@ -14,11 +14,6 @@
   --color-neutral-100: 0, 0%, 100%;
   --color-neutral-900: 210, 100%, 1%;
 
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  background: hsl(var(--color-primary-900));
-  color: hsl(var(--color-neutral-900));
-
   /* Sizes */
   --size-xxs: 4px;
   --size-xs: 8px;
@@ -34,19 +29,18 @@
   --border-radius-l: 6px;
   --border-radius-xl: 8px;
   --border-radius-xxl: 999px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  background: hsl(var(--color-primary-600));
+  color: hsl(var(--color-neutral-900));
+  line-height: 1.5;
 }
 
 @supports (font-variation-settings: normal) {
   :root {
     font-family: "Inter var", sans-serif;
   }
-}
-
-body {
-  font-family: var(--font-family);
-  background: hsl(var(--color-primary-900));
-  color: hsl(var(--color-neutral-100));
-  line-height: 1.5;
 }
 
 header {
