@@ -33,7 +33,7 @@
   /* Logo CSS Custom Variables */
   --logo-margin-top: var(--size-l);
   --logo-max-height: 250px;
-  --logo-height: min(30vh, var(--logo-max-height));
+  --logo-height: min(20vh, var(--logo-max-height));
   --logo-aspect-ratio: calc(280 / 372);
   --logo-width: calc(var(--logo-aspect-ratio) * var(--logo-height));
 
@@ -76,11 +76,14 @@ html::after {
 
 header {
   margin-top: var(--logo-margin-top);
+  margin-right: var(--size-l);
   margin-bottom: var(--size-l);
   display: flex;
   align-items: center;
+  justify-items: center;
 
   svg {
+    flex-shrink: 0;
     margin-left: var(--bg-divider);
     transform: translateX(-50%);
     height: var(--logo-height);
@@ -101,12 +104,12 @@ header {
       color: hsl(var(--color-primary-600));
     }
   }
-}
 
-h1 {
-  font-size: 2rem;
-  color: hsl(var(--color-neutral-100));
-  width: min-content;
+  h1 {
+    font-size: 2rem;
+    color: hsl(var(--color-neutral-100));
+    width: min-content;
+  }
 }
 
 main {
