@@ -43,7 +43,6 @@ body {
   overscroll-behavior: none;
 }
 
-
 @supports (font-variation-settings: normal) {
   :root {
     font-family: "Inter var", sans-serif;
@@ -206,6 +205,21 @@ footer {
             max-width: 60%;
           }
         }
+      }
+
+      a[href="/baerekraft"] {
+        text-decoration: none;
+        font-size: 2.5rem;
+        display: grid;
+        place-items: center;
+        height: 100%;
+        background: linear-gradient(
+          180deg,
+          #f9ffb8 0%,
+          #ecf48e 61.5%,
+          #fa8734 100%
+        );
+        border-radius: 16px;
       }
     }
   }
