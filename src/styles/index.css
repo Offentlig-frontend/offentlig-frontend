@@ -48,11 +48,15 @@ body {
 }
 
 header {
+  margin: var(--size-l);
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: var(--size-s);
 
   svg {
+    width: 72px;
+
     .logo__letter-f,
     .logo__left {
       color: hsl(var(--color-primary-100));
@@ -72,6 +76,7 @@ header {
 h1 {
   font-size: 2rem;
   color: hsl(var(--color-neutral-100));
+  width: min-content;
 }
 
 main {
