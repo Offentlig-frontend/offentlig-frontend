@@ -51,6 +51,22 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  svg {
+    .logo__letter-f,
+    .logo__left {
+      color: hsl(var(--color-primary-100));
+    }
+
+    .logo__top,
+    .logo__bottom {
+      color: hsl(var(--color-neutral-100));
+    }
+
+    .logo__letter-o {
+      color: hsl(var(--color-primary-600));
+    }
+  }
 }
 
 h1 {
