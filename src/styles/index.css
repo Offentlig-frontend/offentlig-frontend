@@ -78,9 +78,7 @@ header {
   margin-top: var(--logo-margin-top);
   margin-bottom: var(--size-l);
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
-  gap: var(--size-s);
+  align-items: center;
 
   svg {
     margin-left: var(--bg-divider);
