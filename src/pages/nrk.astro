@@ -1,12 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Content from "../components/Content.astro";
+
+import "../styles/reset.css";
+import "../styles/nrk.css";
 ---
 
 <Layout title="Offentlig frontend">
+  <link
+    rel="stylesheet"
+    href="https://static.nrk.no/nrk-sans/latest/nrk-sans.min.css"
+    slot="head-insert"
+  />
+  <link href="https://static.nrk.no/core-design/latest/tokens/color/nrk-color-tokens.css" rel="stylesheet" type="text/css"
+  slot="head-insert">
+  <link rel="preconnect" href="https://fonts.googleapis.com" slot="head-insert">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin slot="head-insert">
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" slot="head-insert">
   <Content />
 </Layout>
-
-<style>
-  
-</style>

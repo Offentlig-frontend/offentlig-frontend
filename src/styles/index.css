@@ -38,6 +38,12 @@
   line-height: 1.5;
 }
 
+html,
+body {
+  overscroll-behavior: none;
+}
+
+
 @supports (font-variation-settings: normal) {
   :root {
     font-family: "Inter var", sans-serif;
@@ -48,16 +54,23 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: var(--size-l);
+  margin-bottom: var(--size-l);
+  gap: var(--size-m);
 }
 
 h1 {
   font-size: 2rem;
+  line-height: 1.1;
+  width: min-content;
+  max-width: 10ch;
   color: hsl(var(--color-neutral-100));
 }
 
 main {
-  margin-right: var(--size-m);
-  margin-left: var(--size-m);
+  width: min(100%, 640px);
+  margin: auto;
+  padding: 0 var(--size-m);
 }
 
 h2 {
