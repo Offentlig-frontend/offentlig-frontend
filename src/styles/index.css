@@ -153,6 +153,11 @@ section:nth-child(3) {
     text-align: center;
   }
 
+  h3 {
+    font-weight: 600;
+    margin-top: var(--size-l);
+  }
+
   details {
     margin-top: var(--size-s);
     margin-bottom: var(--size-s);
