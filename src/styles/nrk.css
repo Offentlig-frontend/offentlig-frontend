@@ -8,6 +8,8 @@
 
   --color-neutral-100: white;
   --color-neutral-400: var(--nrk-color-gray-400);
+  --color-neutral-500: var(--nrk-color-gray-500);
+  --color-neutral-600: var(--nrk-color-gray-600);
   --color-neutral-800: var(--nrk-color-gray-800);
   --color-neutral-900: var(--nrk-color-gray-900);
   --color-neutral-900--hsl: 210, 100%, 1%;
@@ -138,7 +140,8 @@ header {
       border: 1px solid hsl(var(--color-primary-100));
     }
 
-    &::after {
+    /* Another circle as the ::after element */
+    /* &::after {
       content: "";
       display: block;
       position: absolute;
@@ -149,6 +152,20 @@ header {
       background: var(--color-primary-900);
       left: 50%;
       top: 110%;
+      border: 1px solid hsl(var(--color-primary-100));
+    } */
+
+    /* Or rather another panel as the ::after element*/
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      width: var(--tv-buttons-frame-width);
+      height: calc(var(--tv-height) / 3.5);
+      background: var(--color-primary-900);
+      top: 120%;
+      background-color: var(--color-neutral-600);
       border: 1px solid hsl(var(--color-primary-100));
     }
   }
