@@ -1,3 +1,6 @@
+---
+import Events from "./Events.astro";
+---
 <header>
   <img src="/logo.svg" alt="Offentlig frontend-logo" />
   <h1>Offentlig frontend</h1>
@@ -37,43 +40,7 @@
 
     <a href="/påmelding">Vil du være med?</a>
   </section>
-  <section>
-    <h2>Arrangementer</h2>
-    <p>Ingen arrangementer planlagt for øyeblikket</p>
-
-    <h3>Tidligere arrangementer</h3>
-    <ol>
-      <li>
-        <h4>Fagdag for frontend i det offentlige</h4>
-        <p>10. september 2024</p>
-        <p>Program:</p>
-        <ol>
-          <li>Christian Johansen: Datadrevet frontendutvikling</li>
-          <li>Eivind Riise: Utilgjengelige opplevelser</li>
-          <li>Jan Schjetne: CSS Container Queries</li>
-          <li>Aurora Scharff: React Server Components</li>
-          <li>Vilde Jølstad Paschen: Spesialartikler i NRK</li>
-        </ol>
-      </li>
-    </ol>
-    <ol>
-      <li>
-        <h4>Minifagdag for frontend i det offentlige</h4>
-        <p>23. april 2024</p>
-        <p>Program:</p>
-        <ol>
-          <li>
-            Christian Peter, Ingvild Forseth og Cristobal Dabed: Hvordan NRK TV
-            bruker Web Components for å få en rask brukeropplevelse
-          </li>
-          <li>
-            Sarah Brodwall og Carl Hedgren: NAVs a11y-rapporteringsløsning: htmx
-            + uu = sant
-          </li>
-        </ol>
-      </li>
-    </ol>
-  </section>
+  <Events />
 </main>
 <footer>
   <h2>Prøv en ny drakt</h2>

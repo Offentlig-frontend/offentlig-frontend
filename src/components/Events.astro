@@ -1,0 +1,81 @@
+---
+interface Event {
+  frontmatter: {
+    title: string;
+    date: string;
+  };
+  compiledContent: () => string;
+}
+
+const events: Event[] = Object.values(
+  await import.meta.glob("../../events/*.md", { eager: true })
+);
+
+const now = new Date();
+
+const sortByLatest = (a: Event, b: Event) =>
+  new Date(b.frontmatter.date) > new Date(a.frontmatter.date) ? 1 : -1;
+
+const sortByUpcoming = (a: Event, b: Event) =>
+  new Date(a.frontmatter.date) > new Date(b.frontmatter.date) ? 1 : -1;
+
+const futureEvents = events.filter(
+  (event: Event) => new Date(event.frontmatter.date) >= now
+).sort(sortByUpcoming);
+
+const pastEvents = events.filter(
+  (event: Event) => new Date(event.frontmatter.date) < now
+).sort(sortByLatest);
+
+const formatDate = (date) =>
+  new Date(date).toLocaleDateString("no-NO", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+---
+
+<section>
+  <h2>Arrangementer</h2>
+  {
+    futureEvents.length === 0 ? (
+      <p>Ingen arrangementer planlagt for øyeblikket</p>
+    ) : (
+      <ol>
+        {futureEvents.map((event) => (
+          <li>
+            <details>
+              <summary>
+                <span>{event.frontmatter.title}</span>
+                <p>{formatDate(event.frontmatter.date)}</p>
+              </summary>
+              <article set:html={event.compiledContent()} />
+            </details>
+          </li>
+        ))}{" "}
+      </ol>
+    )
+  }
+
+  <h3>Tidligere arrangementer</h3>
+  {
+    pastEvents.length === 0 ? (
+      <p>Ingen tidligere arrangementer</p>
+    ) : (
+      <ol>
+        {pastEvents.map((event) => (
+          <li>
+            <details>
+              <summary>
+                <span>{event.frontmatter.title}</span>
+                <p>{formatDate(event.frontmatter.date)}</p>
+              </summary>
+
+              <article set:html={event.compiledContent()} />
+            </details>
+          </li>
+        ))}
+      </ol>
+    )
+  }
+</section>
