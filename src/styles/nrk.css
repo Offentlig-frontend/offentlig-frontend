@@ -317,6 +317,7 @@ p {
 
 footer {
   position: sticky;
+  height: 20vh;
   bottom: 0;
   background: hotpink;
   display: grid;
