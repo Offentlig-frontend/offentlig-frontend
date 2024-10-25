@@ -70,6 +70,11 @@ html {
   font-family: "NRK Sans Variable", sans-serif;
 }
 
+html,
+body {
+  overscroll-behavior: none;
+}
+
 header {
   pointer-events: none;
   display: flex;
@@ -311,6 +316,8 @@ p {
 }
 
 footer {
+  position: sticky;
+  bottom: 0;
   background: hotpink;
-  order: -1;
+  /* order: -1; */
 }
