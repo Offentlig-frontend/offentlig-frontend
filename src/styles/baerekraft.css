@@ -23,6 +23,11 @@ footer {
     display: block;
   }
 
+  a[href="/baerekraft"]::before {
+    content: "Bærekraft";
+    display: block;
+  }
+
   a[href="/nrk"]::before {
     content: "NRK";
     display: block;

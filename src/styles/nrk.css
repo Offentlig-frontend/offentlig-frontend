@@ -380,7 +380,9 @@ footer {
       position: absolute;
       content: "";
       top: calc(2 * var(--controller-border-top-width) + var(--size-m));
-      right: calc(1.3 * var(--controller-border-right-width) + var(--tv-margin-x));
+      right: calc(
+        1.3 * var(--controller-border-right-width) + var(--tv-margin-x)
+      );
       width: 3vw;
       aspect-ratio: 1 / 1;
       border-radius: 50%;
@@ -403,7 +405,6 @@ footer {
           border-radius: 50%;
         }
       }
-
 
       &:not(:has(a)) {
         border-radius: 50%;
@@ -428,21 +429,6 @@ footer {
           justify-content: center;
           gap: var(--size-xs);
         }
-      }
-
-      a[href="/baerekraft"] {
-        text-decoration: none;
-        font-size: 2.5rem;
-        display: grid;
-        place-items: center;
-        line-height: 1.9;
-        height: 100%;
-        background: linear-gradient(
-          180deg,
-          #f9ffb8 0%,
-          #ecf48e 61.5%,
-          #fa8734 100%
-        );
       }
     }
   }
