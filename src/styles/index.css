@@ -56,6 +56,25 @@ header {
   margin-top: var(--size-l);
   margin-bottom: var(--size-l);
   gap: var(--size-m);
+
+  .logo {
+    width: 70px;
+    height: 95px;
+
+    .logo__letter-f,
+    .logo__left {
+      color: hsl(var(--color-primary-100));
+    }
+
+    .logo__top,
+    .logo__bottom {
+      color: hsl(var(--color-neutral-100));
+    }
+
+    .logo__letter-o {
+      color: hsl(var(--color-primary-600));
+    }
+  }
 }
 
 h1 {
