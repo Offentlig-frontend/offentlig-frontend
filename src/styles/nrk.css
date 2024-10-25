@@ -8,6 +8,7 @@
 
   --color-neutral-100: white;
   --color-neutral-400: var(--nrk-color-gray-400);
+  --color-neutral-800: var(--nrk-color-gray-800);
   --color-neutral-900: var(--nrk-color-gray-900);
   --color-neutral-900--hsl: 210, 100%, 1%;
 
@@ -102,15 +103,8 @@ header {
   }
 
   h1 {
-    width: 100%;
-  }
-
-  h1::before {
-    content: "";
-    display: block;
-    background: var(--color-primary-900);
-    opacity: 0.9;
-    z-index: -1;
+    color: transparent;
+    position: absolute;
     height: calc(var(--tv-height) / 2);
     width: var(--tv-buttons-frame-width);
     right: calc(
@@ -127,12 +121,32 @@ header {
     );
 
     top: calc(-1.6 * var(--tv-screen-outline));
-    position: absolute;
-    opacity: 1;
-  }
+    background: var(--color-primary-900);
+    z-index: -1;
 
-  h1 {
-    color: rgba(0, 0, 0, 0);
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      width: calc(var(--tv-buttons-frame-width) * 0.7);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      background-color: var(--color-neutral-800);
+      left: 50%;
+      transform: translateX(-50%);
+      top: 50%;
+      border: 1px solid hsl(var(--color-primary-100));
+    }
+
+    /* &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+    } */
   }
 }
 
