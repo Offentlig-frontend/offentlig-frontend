@@ -5,7 +5,7 @@
   --color-primary-600: var(--nrk-color-core-blue-600);
   --color-primary-800: var(--nrk-color-core-blue-800);
   --color-primary-900: var(--nrk-color-core-blue-900);
-  
+
   --color-neutral-400: var(--nrk-color-gray-400);
   --color-neutral-900: var(--nrk-color-gray-900);
   --color-neutral-900--hsl: 210, 100%, 1%;
@@ -21,7 +21,6 @@
   --size-l: 48px;
   --size-xl: 96px;
 
-
   /* TV props */
 
   --tv-margin-y: calc((100vh - var(--tv-height)) / 2);
@@ -35,11 +34,18 @@
   --tv-width: min(max(85vw, 90vh), 1000px);
   --tv-aspect-ratio: 1.68;
   --tv-height: calc(var(--tv-width) / var(--tv-aspect-ratio));
-  --tv-screen-height: calc(100vh - (var(--tv-margin-y) * 2) - var(--tv-frame-border-top) - var(--tv-frame-border-bottom));
-  --tv-screen-width: calc(100vw - (var(--tv-margin-x) * 2) - var(--tv-frame-border-right) - var(--tv-frame-border-left));
-  
-  
-  --tv-buttons-frame-width: calc((var(--tv-frame-border-right) * 0.8) - var(--tv-screen-outline));
+  --tv-screen-height: calc(
+    100vh - (var(--tv-margin-y) * 2) - var(--tv-frame-border-top) -
+      var(--tv-frame-border-bottom)
+  );
+  --tv-screen-width: calc(
+    100vw - (var(--tv-margin-x) * 2) - var(--tv-frame-border-right) -
+      var(--tv-frame-border-left)
+  );
+
+  --tv-buttons-frame-width: calc(
+    (var(--tv-frame-border-right) * 0.8) - var(--tv-screen-outline)
+  );
   --tv-buttons-img-size: calc(var(--tv-width) * 0.08);
 
   /* Borders */
@@ -78,14 +84,18 @@ header {
 
   img {
     position: absolute;
-    right: calc((var(--tv-frame-border-right) + var(--tv-buttons-img-size) + var(--tv-screen-outline)) / -2);
+    right: calc(
+      (
+          var(--tv-frame-border-right) + var(--tv-buttons-img-size) +
+            var(--tv-screen-outline)
+        ) / -2
+    );
     border-radius: 50%;
     aspect-ratio: 1 / 1;
     height: var(--tv-buttons-img-size);
     background: var(--color-primary-800);
     padding: var(--size-xs);
-    top: calc(-0.8 * var(--tv-screen-outline))
-
+    top: calc(-0.8 * var(--tv-screen-outline));
   }
 
   h1 {
@@ -100,10 +110,18 @@ header {
     z-index: -1;
     height: calc(var(--tv-height) / 2);
     width: var(--tv-buttons-frame-width);
-    right: calc(-1 * ((var(--tv-frame-border-right) + var(--tv-screen-outline)) / 2 + (var(--tv-buttons-frame-width) - var(--tv-buttons-img-size)) * 2));
+    right: calc(
+      -1 * ((var(--tv-frame-border-right) + var(--tv-screen-outline)) / 2 +
+            (var(--tv-buttons-frame-width) - var(--tv-buttons-img-size)) * 2)
+    );
     right: calc((-1 * var(--tv-frame-border-right)));
     /* right: calc(-1 * ((var(--tv-frame-border-right) + var(--tv-screen-outline)) / 2 + 50px)); */
-    right: calc((var(--tv-frame-border-right) + var(--tv-buttons-frame-width) + var(--tv-screen-outline)) / -2);
+    right: calc(
+      (
+          var(--tv-frame-border-right) + var(--tv-buttons-frame-width) +
+            var(--tv-screen-outline)
+        ) / -2
+    );
 
     top: calc(-1.6 * var(--tv-screen-outline));
     position: absolute;
@@ -116,12 +134,19 @@ header {
 }
 
 main {
-  margin-left: calc(var(--tv-frame-border-left) + calc((100vw - var(--tv-width)) / 2));
+  margin-left: calc(
+    var(--tv-frame-border-left) + calc((100vw - var(--tv-width)) / 2)
+  );
   margin-top: calc(var(--tv-frame-border-top) + var(--tv-margin-y));
-  margin-right: calc(var(--tv-frame-border-right) + calc((100vw - var(--tv-width)) / 2));
+  margin-right: calc(
+    var(--tv-frame-border-right) + calc((100vw - var(--tv-width)) / 2)
+  );
   padding: var(--size-l);
   padding-top: 0;
-  padding-bottom: calc(100vh - var(--tv-height) + var(--tv-frame-border-bottom) + var(--tv-frame-outline));
+  padding-bottom: calc(
+    100vh - var(--tv-height) + var(--tv-frame-border-bottom) +
+      var(--tv-frame-outline)
+  );
   font-family: "Alumni Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -210,12 +235,17 @@ section {
       }
     }
   }
+
+  ol {
+    li {
+      list-style: none;
+    }
+  }
 }
 
 p {
   margin-bottom: var(--size-s);
 }
-
 
 footer {
   background: hotpink;
