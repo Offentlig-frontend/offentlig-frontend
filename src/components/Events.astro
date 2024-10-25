@@ -18,7 +18,7 @@ const mappedEvents = events.map((event) => ({
 
 ---
 
-<section>
+<section class="events">
   <h2>Arrangementer</h2>
   <event-list data-events={JSON.stringify(mappedEvents)} data-filter="future"></event-list>
   <event-list data-title="Tidligere arrangementer" data-events={JSON.stringify(mappedEvents)} data-filter="past"></event-list>

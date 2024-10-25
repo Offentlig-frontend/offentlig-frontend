@@ -96,7 +96,7 @@ section {
   margin-bottom: var(--size-m);
 }
 
-section:first-child {
+.intro {
   & > * + * {
     margin-top: var(--size-m);
   }
@@ -108,7 +108,7 @@ section:first-child {
   }
 }
 
-section:nth-child(2) {
+.members {
   text-align: center;
 
   &:not(h2) {
@@ -149,7 +149,7 @@ section:nth-child(2) {
   }
 }
 
-section:nth-child(3) {
+.events {
   event-list > p {
     text-align: center;
   }
